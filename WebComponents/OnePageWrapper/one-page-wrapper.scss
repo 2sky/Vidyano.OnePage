@@ -1,0 +1,26 @@
+@import "../_vars.scss";
+
+:host {
+    position: relative;
+
+    nav {
+        z-index: 10;
+        @apply(--vi-one-page-wrapper-navigation);
+    }
+
+    .swiper-wrapper {
+        @apply(--vi-one-page-wrapper);
+    }
+
+    &[is-loading] {
+        #swiperContainer {
+            visibility: hidden;
+        }
+    }
+
+    .swiper-slide:not([active]) {
+        display: -ms-flexbox !important;
+        display: -webkit-flex !important;
+        display: flex !important;
+    }
+}

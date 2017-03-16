@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "emitBOM": false,
+    "noEmitOnError": false,
+    "noEmitHelpers": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": false,
+    "sourceMap": false
+  },
+  "compileOnSave": true,
+  "files": [
+    "Scripts/typings/vidyano/vidyano.d.ts",
+    "Scripts/typings/swiper/swiper.d.ts",
+    "WebComponents/OnePageWrapper/one-page-wrapper.ts"
+  ]
+}

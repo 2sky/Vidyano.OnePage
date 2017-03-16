@@ -1,0 +1,18 @@
+{
+  "name": "vidyano.onepage",
+  "version": "1.0.0",
+  "main": [
+    "dist/one-page-wrapper.html"
+  ],
+  "ignore": [
+    "**/.*",
+    "!dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2sky/Vidyano.OnePage.git"
+  },
+  "devDependencies": {
+    "swiper": "3.4.2"
+  }
+}

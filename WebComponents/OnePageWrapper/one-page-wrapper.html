@@ -1,0 +1,17 @@
+﻿<script src="../../bower_components/swiper/dist/js/swiper.min.js"></script>
+<link rel="stylesheet" href="../../bower_components/swiper/dist/css/swiper.min.css">
+
+<dom-module id="vi-one-page-wrapper">
+    <template>
+        <link rel="stylesheet" href="one-page-wrapper.css" />
+        <vi-size-tracker size="{{size}}"></vi-size-tracker>
+        <div id="swiperContainer" class="swiper-container">
+            <vi-app-route-presenter id="routes" class="swiper-wrapper"></vi-app-route-presenter>
+        </div>
+        <nav id="nav" on-tap="_changeSlide">
+            <slot name="navigation"></slot>
+        </nav>
+    </template>
+</dom-module>
+
+<script src="one-page-wrapper.js"></script>

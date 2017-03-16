@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F80FADD-B162-4CAA-B5F1-9DA95293616D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Vidyano.OnePage</RootNamespace>
+    <AssemblyName>Vidyano.OnePage</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bower.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="tsconfig.json" />
+    <None Include="WebComponents\OnePageWrapper\one-page-wrapper.scss" />
+    <None Include="WebComponents\_vars.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typings\swiper\swiper.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\vidyano\vidyano.d.ts" />
+    <TypeScriptCompile Include="WebComponents\OnePageWrapper\one-page-wrapper.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HtmlAgilityPack.dll" />
+    <Content Include="Vidyano.Web2.Build.exe" />
+    <Content Include="WebComponents\OnePageWrapper\one-page-wrapper.css">
+      <DependentUpon>one-page-wrapper.scss</DependentUpon>
+    </Content>
+    <Content Include="WebComponents\OnePageWrapper\one-page-wrapper.html" />
+    <Content Include="WebComponents\OnePageWrapper\one-page-wrapper.js">
+      <DependentUpon>one-page-wrapper.ts</DependentUpon>
+    </Content>
+    <Content Include="WebComponents\OnePageWrapper\one-page-wrapper.min.css">
+      <DependentUpon>one-page-wrapper.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Vidyano.Web2.Build, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Vidyano.Web2.Build.1.0\lib\net452\Vidyano.Web2.Build.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)Vidyano.Web2.Build.exe $(ProjectDir)WebComponents -outdir=$(ProjectDir)dist</PostBuildEvent>
+  </PropertyGroup>
+</Project>

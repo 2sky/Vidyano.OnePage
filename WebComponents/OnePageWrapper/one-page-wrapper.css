@@ -1,0 +1,14 @@
+﻿:host {
+  position: relative; }
+  :host nav {
+    z-index: 10;
+    @apply (--vi-one-page-wrapper-navigation); }
+  :host .swiper-wrapper {
+    @apply (--vi-one-page-wrapper); }
+  :host[is-loading] #swiperContainer {
+    visibility: hidden; }
+  :host .swiper-slide:not([active]) {
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important; }
+
