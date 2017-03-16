@@ -1,12 +1,12 @@
 {
   "name": "vidyano.onepage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": [
-    "dist/one-page-wrapper.html"
+    "one-page-wrapper.html"
   ],
   "ignore": [
     "**/.*",
-    "!dist/*"
+    "!one-page-wrapper.html"
   ],
   "repository": {
     "type": "git",

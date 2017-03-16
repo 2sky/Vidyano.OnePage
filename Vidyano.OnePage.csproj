@@ -72,6 +72,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)Vidyano.Web2.Build.exe $(ProjectDir)WebComponents -outdir=$(ProjectDir)dist</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)Vidyano.Web2.Build.exe $(ProjectDir)WebComponents -outdir=$(ProjectDir)</PostBuildEvent>
   </PropertyGroup>
 </Project>
