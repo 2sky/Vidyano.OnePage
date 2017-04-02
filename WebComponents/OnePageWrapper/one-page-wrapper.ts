@@ -139,11 +139,9 @@ namespace Vidyano.WebComponents {
                 this._activeAnchor.classList.add("active");
         }
 
-        private _changeSlide(e: TapEvent) {
-            e.stopPropagation();
-
-            const anchor = <HTMLAnchorElement>e.target;
-            this.swiper.slideTo(Enumerable.from(anchor.parentElement.children).indexOf(anchor));
+        private _appRouteActivate(e: Event, details: { route: Vidyano.WebComponents.AppRoute; }) {
+            if (this.swiper)
+                this.swiper.slideTo(Enumerable.from(this.$.routes.children).indexOf(details.route));
         }
     }
 }

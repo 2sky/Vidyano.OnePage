@@ -55,9 +55,9 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 </style>
         <vi-size-tracker size="{{size}}"></vi-size-tracker>
         <div id="swiperContainer" class="swiper-container">
-            <vi-app-route-presenter id="routes" class="swiper-wrapper"></vi-app-route-presenter>
+            <vi-app-route-presenter id="routes" class="swiper-wrapper" on-app-route-activate="_appRouteActivate"></vi-app-route-presenter>
         </div>
-        <nav id="nav" on-tap="_changeSlide">
+        <nav id="nav">
             <slot name="navigation"></slot>
         </nav>
     </template>
@@ -175,10 +175,9 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
                     });
                 });
             };
-            OnePageWrapper.prototype._changeSlide = function (e) {
-                e.stopPropagation();
-                var anchor = e.target;
-                this.swiper.slideTo(Enumerable.from(anchor.parentElement.children).indexOf(anchor));
+            OnePageWrapper.prototype._appRouteActivate = function (e, details) {
+                if (this.swiper)
+                    this.swiper.slideTo(Enumerable.from(this.$.routes.children).indexOf(details.route));
             };
             return OnePageWrapper;
         }(Vidyano.WebComponents.WebComponent));

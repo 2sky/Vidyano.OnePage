@@ -110,10 +110,9 @@ var Vidyano;
                     });
                 });
             };
-            OnePageWrapper.prototype._changeSlide = function (e) {
-                e.stopPropagation();
-                var anchor = e.target;
-                this.swiper.slideTo(Enumerable.from(anchor.parentElement.children).indexOf(anchor));
+            OnePageWrapper.prototype._appRouteActivate = function (e, details) {
+                if (this.swiper)
+                    this.swiper.slideTo(Enumerable.from(this.$.routes.children).indexOf(details.route));
             };
             return OnePageWrapper;
         }(Vidyano.WebComponents.WebComponent));
