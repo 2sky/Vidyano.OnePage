@@ -12,6 +12,10 @@
         @apply(--vi-one-page-wrapper);
     }
 
+    .swiper-slide {
+        @apply(--vi-one-page-wrapper-slide);
+    }
+
     &[is-loading] {
         #swiperContainer {
             visibility: hidden;
