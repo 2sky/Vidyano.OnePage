@@ -123,7 +123,10 @@ namespace Vidyano.WebComponents {
         }
 
         private _slideChanged(swiper: Swiper) {
-            this.app.changePath(this.routes[swiper.activeIndex].route);
+            if (this.app.currentRoute === this.routes[swiper.activeIndex])
+                return;
+
+            this.app.changePath(this.routes[swiper.activeIndex].route.split("(")[0]);
             this._updateActiveAnchor(swiper);
         }
 
